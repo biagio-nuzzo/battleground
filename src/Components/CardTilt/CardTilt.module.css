@@ -20,7 +20,6 @@
   width: 100%;
 }
 
-
 .settingBarStyle:before {
   content: "";
   position: absolute;
@@ -36,7 +35,6 @@
 }
 
 .settingBarStyle {
-  background-color: black !important;
   height: 73px;
   padding-top: 8px;
   padding-bottom: 13px;
@@ -65,34 +63,179 @@
 }
 
 .inputStyle {
-  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_component_middle_tile-44edb7499e3128e81acc4ba8fcb8dd3a59ff0ef302baef5f3a8211d96fc3c932e09c2e41386f8f1cdf437193ddad43af9699636559cac5b007ceef4b69046765.png");
-  height: 42px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  transition: background-image 0.15s ease 0s;
-  padding: 17px;
-  border-radius: 18px;
-  color: white !important;
+  padding-left: 5px;
+  background-color: transparent;
   width: 280px;
-  color: #f8d23bc9 !important;
-  margin-top: 9px;
-  margin-left: 5px;
+  z-index: 999;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: HearthStoneFont;
+  letter-spacing: 0.75px;
+  color: #d6ab1d;
+  caret-color: #d6ab1d;
+}
+
+.inputStyle:focus-visible {
+  outline: none;
+}
+
+.inputStyle::placeholder {
+  color: rgba(255, 255, 255, 0.454);
   font-weight: 500;
   font-size: 18px;
   font-family: HearthStoneFont;
 }
-.inputStyle:focus-visible {
-  outline-color: #f8d23bc9;
-  outline-width: medium;
-  outline-style: solid;
+
+.noResultContainer {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: -65px !important;
+  margin-bottom: 30px;
 }
 
-.inputStyle::placeholder {
-  color: rgba(255, 255, 255, 0.769);
-  font-weight: 500;
-  font-size: 18px;
+.dividerNoResultImage {
+  margin: 0px auto -60px;
+  width: 296px;
+  height: 288px;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/cardgallery_empty_keyart-087e770b5f99c63fe84ae21c0c412d1b9c91c86ecd8f7635d7e1ec895b1f3f2eebc20fe12192522b2d991b34393b169e8c6780f0cc88387be0397ca75099e786.png")
+    center center no-repeat;
+  position: relative;
+  z-index: 1;
+}
+.dividerNoResult {
+  width: 100%;
+  height: 34px;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/ui/divider-double-detailed-93ef45548a2f3d93bb7d53152ec7b98a71cba0c1a885f653bf42de28022ba3faf4e2978bb21c6f9b9286414070d4c486ec49f5b0304bd6247d4074f7984d6955.png")
+    center center no-repeat;
+}
+
+.dividerNoResultMessage {
+  margin-top: 35px;
+  color: rgb(97, 67, 38);
+  font-family: HearthStoneFont;
+}
+
+.divInternalOne::before {
+  content: "";
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_component_left-6b7e7884670039ca95b4a3b1cb567ae78549f12e96751089591af6bcac0fbe40b23e4f8c93cd96229c7ebab9e67b23d0fb9e56d52a47e61fbbe753211d908e84.png")
+    left center no-repeat;
+  height: 54px;
+  width: 34px;
+  position: absolute;
+  left: -30px;
+  top: -0px;
+}
+
+.divInternalOne {
+  height: 54px;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_component_middle_tile-44edb7499e3128e81acc4ba8fcb8dd3a59ff0ef302baef5f3a8211d96fc3c932e09c2e41386f8f1cdf437193ddad43af9699636559cac5b007ceef4b69046765.png")
+    center center repeat-x;
+  padding: 6px 0px;
+  margin-left: 34px;
+  position: relative;
+}
+
+.divInternalOne::after {
+  content: "";
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_component_right-7697450b1310903cfb15179cc963f0ca60a3e22c8b938361310770a6a39eb1480909c01980b85da8c7bf954766df5b0e03865b86d8980e5c46ac2e1d1198ccdf.png")
+    right center no-repeat;
+  height: 54px;
+  width: 34px;
+  position: absolute;
+  right: -30px;
+  top: 0px;
+}
+
+.divInternalTwo::before {
+  content: "";
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/search_left-3cb561cf585e6b6aded5dca35f8c16b3450db50cf6146e8699bd9a12117eede0b0e437db488e0a499755f2a442229c1c633522a26b08138350140aebab05ec31.png")
+    left center no-repeat;
+  height: 42px;
+  width: 24px;
+  position: absolute;
+  left: -24px;
+  top: 0px;
+  transition: background-image 0.15s ease 0s;
+}
+
+.divInternalTwo {
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/search_middle_stretch-ea2c7bde67b73e83e192c5a6a952519dfcad9041f4eada47653141ee06d51a316268240dd2d5cd1b8ba704ce64b213cf824f82c31ac05cc7dcedd5d584d793b9.png")
+    center center;
+  height: 42px;
+  position: relative;
+  z-index: 1;
+  margin: 0px -3px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: background-image 0.15s ease 0s;
+}
+
+.divInternalTwo::after {
+  content: "";
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/search_right-9e22f78542b7f45c1fbffb80d6fe8f54bdb3bf5ba2972d0d20ce586b86e5b896a79bd9dd811dd0a846253db72c4821bf53aa0f3ea2add1efec8e374e9a62497d.png")
+    right center no-repeat;
+  height: 42px;
+  width: 24px;
+  position: absolute;
+  right: -24px;
+  z-index: 1;
+  top: 0px;
+  transition: background-image 0.15s ease 0s;
+}
+
+.divInternalThree {
+  margin: 0px -10px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.starButton::before {
+  content: "";
+  position: absolute;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/battlegrounds/icon_gold_selected-db81d4250b855e8f57996a35bdc48bee978a8bc880d8af02b804481a80094497a5376eb61833b94d427cb26194c2528520c052044527be424a61aa6e4bc1bb81.png")
+    center center / contain no-repeat;
+  inset: -10px;
+  opacity: 0;
+  transition: opacity 0.15s ease 0s;
+}
+
+.starButton:hover::before {
+  opacity: 1;
+}
+
+.starButton {
+  width: 36px;
+  height: 34px;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/battlegrounds/icon_gold-d5467243c3779b51398768214f15b7c2a4a636d9972db16b2ed1b27b8fcf49a8bcb0f3885195c11b32437e247fc8421bc076dd585983b01f0344fff77c20a75a.png")
+    center center / contain no-repeat;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 9999 !important;
+  border: none;
+}
+
+.starButtonText {
+  color: rgb(255, 255, 255);
+  margin: 0px;
+  padding: 0px;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.95885px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.14147px 1.99499px 0px,
+    rgb(0 0 0) -0.83229px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.70157px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.42159px -1.95506px 0px,
+    rgb(0 0 0) 0.56732px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.55883px 0px;
+  position: relative;
+  white-space: nowrap;
   font-family: HearthStoneFont;
 }

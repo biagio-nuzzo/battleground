@@ -15,7 +15,7 @@ const CardDetailPopup = (props) => {
         <div className={Style.popupHeader}>
           <FontAwesomeIcon
             icon={faClose}
-            style={{color: "#fcd144", fontSize: 40, cursor: "pointer"}}
+            style={{ color: "#d6ab1d", fontSize: 40, cursor: "pointer" }}
             onClick={() => {
               const tmp_data = {
                 visibility: "none",
@@ -28,7 +28,11 @@ const CardDetailPopup = (props) => {
 
         <Row className="mx-auto" style={{ width: "60%" }}>
           <Col md={6} sm={12} className={Style.colOneStylePopup}>
-            <img src={details.image} className={Style.imgPopupStyle} />
+            <img
+              alt="details-popup-img"
+              src={details.image}
+              className={Style.imgPopupStyle}
+            />
           </Col>
           <Col md={6} sm={12} className={Style.colTwoStylePopup}>
             <div className={Style.detailsContainer}>
