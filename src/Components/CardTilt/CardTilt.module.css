@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
+
+.cardGridContainer {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-top: 20px !important;
+  padding-top: 30px !important;
+}
+
+.cardContainer {
+  box-shadow: none !important;
+  margin-bottom: 20px !important;
+}
+
+.cardContainer:hover {
+  box-shadow: none !important;
+}
+
+.imgCardTilt {
+  width: 100%;
+}
+
+
+.settingBarStyle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-size: 134px 73px;
+  background-position: top;
+  background-repeat: repeat-x;
+  left: -3px;
+  width: 134px;
+  height: 73px;
+  z-index: 0;
+  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_left-4ba7c0885d48f7571e2220d7796d83de1ad1e99db229b0b48b5cd337bae85193adc094fa74208aa5005382ac1100cce651cbfbb0a99e94d566a88e0868dff9ab.png");
+}
+
+.settingBarStyle {
+  background-color: black !important;
+  height: 73px;
+  padding-top: 8px;
+  padding-bottom: 13px;
+  background-size: 100% 73px;
+  background-position: top;
+  background-repeat: repeat-x;
+  display: block;
+  width: 100%;
+  z-index: 5;
+  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_middle_repeat-b357e74839b5f16173c2f35d36ce22cae24d5b552e2eb1dd1fd7d3091eeccca8eb8ab5c0a2c42e9476357ac2c744e8e22ddc08c5d27be8c670fb9630065a9c01.png");
+}
+
+.settingBarStyle:after {
+  content: "";
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  background-size: 134px 73px;
+  background-position: top;
+  background-repeat: repeat-x;
+  right: 0px;
+  width: 134px;
+  height: 73px;
+  z-index: 0;
+  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_left-4ba7c0885d48f7571e2220d7796d83de1ad1e99db229b0b48b5cd337bae85193adc094fa74208aa5005382ac1100cce651cbfbb0a99e94d566a88e0868dff9ab.png");
+}
+
+.inputStyle {
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_component_middle_tile-44edb7499e3128e81acc4ba8fcb8dd3a59ff0ef302baef5f3a8211d96fc3c932e09c2e41386f8f1cdf437193ddad43af9699636559cac5b007ceef4b69046765.png");
+  height: 42px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: background-image 0.15s ease 0s;
+  padding: 17px;
+  border-radius: 18px;
+  color: white !important;
+  width: 280px;
+  color: #f8d23bc9 !important;
+  margin-top: 9px;
+  margin-left: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: HearthStoneFont;
+}
+.inputStyle:focus-visible {
+  outline-color: #f8d23bc9;
+  outline-width: medium;
+  outline-style: solid;
+}
+
+.inputStyle::placeholder {
+  color: rgba(255, 255, 255, 0.769);
+  font-weight: 500;
+  font-size: 18px;
+  font-family: HearthStoneFont;
+}
