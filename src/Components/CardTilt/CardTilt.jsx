@@ -3,7 +3,6 @@ import React, { useRef, useEffect, useState } from "react";
 import VanillaTilt from "vanilla-tilt";
 import { Col, Row } from "react-bootstrap";
 import Divider from "../Divider/Divider";
-import CardDetailPopup from "../CardDetailPopup/CardDetailPopup";
 
 const options = {
   scale: 1.15,
@@ -52,6 +51,7 @@ const CardTilt = (props) => {
             ) {
               return val;
             }
+            return null;
           })
           .map((card, index) => {
             return (
@@ -73,7 +73,7 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img className={Style.imgCardTilt} src={card.image} />
+                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
                 </Tilt>
               </Col>
             );
@@ -91,6 +91,7 @@ const CardTilt = (props) => {
             ) {
               return val;
             }
+            return null;
           })
           .map((card, index) => {
             return (
@@ -105,7 +106,7 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img className={Style.imgCardTilt} src={card.image} />
+                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
                 </Tilt>
               </Col>
             );
@@ -123,6 +124,7 @@ const CardTilt = (props) => {
             ) {
               return val;
             }
+            return null;
           })
           .map((card, index) => {
             return (
@@ -137,7 +139,7 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img className={Style.imgCardTilt} src={card.image} />
+                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
                 </Tilt>
               </Col>
             );
@@ -155,6 +157,7 @@ const CardTilt = (props) => {
             ) {
               return val;
             }
+            return null;
           })
           .map((card, index) => {
             return (
@@ -169,7 +172,7 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img className={Style.imgCardTilt} src={card.image} />
+                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
                 </Tilt>
               </Col>
             );
