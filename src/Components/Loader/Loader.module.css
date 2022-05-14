@@ -1,0 +1,32 @@
+.loaderContainer{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-size: 100% 100%;
+    background-image: url('../../assets/images/background.jpg');
+    z-index: 100;
+    text-align: center;
+    transition: all 0.75s;
+}
+
+.loaderContainer::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    background-image: url('../../assets/images/background_bottom_2.png');
+    width: 100%;
+    padding-bottom: 80px;
+    background-position: bottom;
+}
+
+.loaderContainer img{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

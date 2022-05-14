@@ -55,7 +55,7 @@ const CardTilt = (props) => {
           })
           .map((card, index) => {
             return (
-              <Col key={index} lg={3} md={4} sm={6} xs={12}>
+              <Col key={index} lg={2} md={3} sm={6} xs={12}>
                 <Tilt
                   onClick={() => {
                     const tmp_data = {
@@ -95,7 +95,7 @@ const CardTilt = (props) => {
           })
           .map((card, index) => {
             return (
-              <Col key={index} lg={3} md={4} sm={6} xs={12}>
+              <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
                   options={options}
                   className={Style.cardContainer}
@@ -128,7 +128,7 @@ const CardTilt = (props) => {
           })
           .map((card, index) => {
             return (
-              <Col key={index} lg={3} md={4} sm={6} xs={12}>
+              <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
                   options={options}
                   className={Style.cardContainer}
@@ -161,7 +161,7 @@ const CardTilt = (props) => {
           })
           .map((card, index) => {
             return (
-              <Col key={index} lg={3} md={4} sm={6} xs={12}>
+              <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
                   options={options}
                   className={Style.cardContainer}
