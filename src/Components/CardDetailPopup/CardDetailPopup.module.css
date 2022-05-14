@@ -1,9 +1,37 @@
-.popUpContainer{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.358);
-    z-index: 100;
+.popUpContainer {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.358);
+  z-index: 100;
+}
+
+.colOneStylePopup {
+  display: flex !important;
+  margin: auto !important;
+}
+
+.colTwoStylePopup {
+  display: flex !important;
+  margin: auto !important;
+}
+
+.imgPopupStyle {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.detailsContainer {
+  color: white;
+  text-align: center;
+}
+
+.popupHeader{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 9999 !important;
 }

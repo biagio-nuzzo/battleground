@@ -21,6 +21,7 @@ const CardTilt = (props) => {
 
     return <div ref={tilt} {...rest} />;
   }
+  var tmpHeroesArray = [];
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -33,6 +34,7 @@ const CardTilt = (props) => {
               placeholder="Cerca Eroi, Carte e Poteri..."
               className={Style.inputStyle}
               onChange={(event) => {
+                tmpHeroesArray = [];
                 setSearchTerm(event.target.value);
               }}
             />
@@ -45,10 +47,12 @@ const CardTilt = (props) => {
         {props.heroes.heroes
           .filter((val) => {
             if (searchTerm === "") {
+              tmpHeroesArray.push(val);
               return val;
             } else if (
               val.name.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
+              tmpHeroesArray.push(val);
               return val;
             }
             return null;
@@ -59,7 +63,7 @@ const CardTilt = (props) => {
                 <Tilt
                   onClick={() => {
                     const tmp_data = {
-                      visibility: "block",
+                      visibility: "flex",
                       details: card,
                     };
                     props.cardDetail(tmp_data);
@@ -73,11 +77,20 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
+                  <img
+                    alt="img-hs"
+                    className={Style.imgCardTilt}
+                    src={card.image}
+                  />
                 </Tilt>
               </Col>
             );
           })}
+        {tmpHeroesArray.length === 0 && (
+          <Col xs={12}>
+            <div className={Style.noResult}>Nessun risultato</div>
+          </Col>
+        )}
       </Row>
 
       <Row className={Style.cardGridContainer}>
@@ -97,6 +110,13 @@ const CardTilt = (props) => {
             return (
               <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
+                  onClick={() => {
+                    const tmp_data = {
+                      visibility: "flex",
+                      details: card,
+                    };
+                    props.cardDetail(tmp_data);
+                  }}
                   options={options}
                   className={Style.cardContainer}
                   style={{
@@ -106,7 +126,11 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
+                  <img
+                    alt="img-hs"
+                    className={Style.imgCardTilt}
+                    src={card.image}
+                  />
                 </Tilt>
               </Col>
             );
@@ -130,6 +154,13 @@ const CardTilt = (props) => {
             return (
               <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
+                  onClick={() => {
+                    const tmp_data = {
+                      visibility: "flex",
+                      details: card,
+                    };
+                    props.cardDetail(tmp_data);
+                  }}
                   options={options}
                   className={Style.cardContainer}
                   style={{
@@ -139,7 +170,11 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
+                  <img
+                    alt="img-hs"
+                    className={Style.imgCardTilt}
+                    src={card.image}
+                  />
                 </Tilt>
               </Col>
             );
@@ -163,6 +198,13 @@ const CardTilt = (props) => {
             return (
               <Col key={index} lg={2} md={4} sm={6} xs={12}>
                 <Tilt
+                  onClick={() => {
+                    const tmp_data = {
+                      visibility: "flex",
+                      details: card,
+                    };
+                    props.cardDetail(tmp_data);
+                  }}
                   options={options}
                   className={Style.cardContainer}
                   style={{
@@ -172,7 +214,11 @@ const CardTilt = (props) => {
                     margin: 0,
                   }}
                 >
-                  <img alt="img-hs" className={Style.imgCardTilt} src={card.image} />
+                  <img
+                    alt="img-hs"
+                    className={Style.imgCardTilt}
+                    src={card.image}
+                  />
                 </Tilt>
               </Col>
             );

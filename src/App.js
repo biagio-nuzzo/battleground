@@ -9,6 +9,8 @@ import cards from "./datas/cards.js";
 import CardDetailPopup from './Components/CardDetailPopup/CardDetailPopup';
 import Loader from './Components/Loader/Loader';
 
+
+
 function App() {
 
 
@@ -19,10 +21,9 @@ function App() {
 
   const [cardDetail, setCardDetail] = useState(initializePopup);
   const [loader, setLoader] = useState("block");
-  const secretsData = secrets;
 
   useEffect(() => {
-    setTimeout(() => setLoader("none"), 3000);
+    setTimeout(() => setLoader("none"), 1000);
   }, []);
 
 
@@ -30,14 +31,14 @@ function App() {
 
     <React.Fragment>
       {(cardDetail.details) &&
-        <CardDetailPopup {...cardDetail} />
+        <CardDetailPopup popupVisibility={setCardDetail} {...cardDetail} />
       }
 
       <Loader loader={loader} />
 
       <div className='backgroundImageContainer pt-5'>
         <Container className="main-container-battleground">
-          <CardTilt cardDetail={setCardDetail} secrets={secretsData} heroes={heroes} powers={powers} cards={cards} />
+          <CardTilt cardDetail={setCardDetail} secrets={secrets} heroes={heroes} powers={powers} cards={cards} />
         </Container>
       </div>
     </React.Fragment>
