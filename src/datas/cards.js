@@ -1,68 +1,6 @@
 const cards = {
     "cards":[
     {
-        "classId": 3,
-        "collectible": 0,
-        "flavorText": "",
-        "name": "Serpe",
-        "minionTypeId": 20,
-        "cropImage": null,
-        "text": "",
-        "image": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/bfe2eb996f9a9c59a644438be73df0e0c9b34629210724414382096db406638d.png",
-        "attack": 1,
-        "manaCost": 1,
-        "slug": "204-snake",
-        "imageGold": "",
-        "artistName": null,
-        "battlegrounds": {
-            "tier": 1,
-            "imageGold": "",
-            "image": "",
-            "hero": false
-        },
-        "health": 1,
-        "cardSetId": 3,
-        "parentId": 455,
-        "rarityId": null,
-        "cardTypeId": 4,
-        "multiClassIds": [],
-        "id": 204
-    },
-    {
-        "minionTypeId": 20,
-        "text": "<b>Veleno</b>",
-        "image": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/f2cd7f8cf0634bceb20628221f350d5ae36a050abddbb2dafc059d3e0e49ffc2.png",
-        "id": 1098,
-        "cardTypeId": 4,
-        "cropImage": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/6837cd7bd0fe60af5b7b87b1667c3d01b9dfd29172107f4f56342d81023df658.png",
-        "attack": 2,
-        "health": 3,
-        "cardSetId": 3,
-        "keywordIds": [
-            32
-        ],
-        "manaCost": 3,
-        "collectible": 1,
-        "duels": {
-            "relevant": true,
-            "constructed": true
-        },
-        "multiClassIds": [],
-        "slug": "1098-emperor-cobra",
-        "classId": 12,
-        "battlegrounds": {
-            "tier": 1,
-            "imageGold": "",
-            "image": "",
-            "hero": false
-        },
-        "name": "Cobra Imperatore",
-        "imageGold": "https://d15f34w2p8l1cc.cloudfront.net/hearthstone/b98c3de7c0839c558559f6ebbbf67fc97c37deb52f7fa608a57e19bb88546b42.png",
-        "artistName": "Lars Grant-West",
-        "rarityId": 3,
-        "flavorText": "Il Bacino di Sholazar ospita alcune delle creature pi\u00f9 letali. Se hai intenzione di visitarlo, usa un insetticida... e un'armatura a piastre."
-    },
-    {
         "classId": 12,
         "collectible": 1,
         "flavorText": "Contiene il 75% di fibre in pi\u00f9 di suo fratello Magni!",

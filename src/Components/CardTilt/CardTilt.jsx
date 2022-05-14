@@ -29,6 +29,7 @@ const CardTilt = (props) => {
   var tmpSecretsArray = [];
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [stars, setStars] = useState([])
 
   return (
     <React.Fragment>
@@ -250,7 +251,11 @@ const CardTilt = (props) => {
                   <img
                     alt="img-hs"
                     className={Style.imgCardTilt}
-                    src={card.image}
+                    src={
+                      card.battlegrounds.image
+                        ? card.battlegrounds.image
+                        : card.image
+                    }
                   />
                 </Tilt>
               </Col>

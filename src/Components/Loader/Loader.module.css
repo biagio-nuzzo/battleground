@@ -4,7 +4,8 @@
   top: 0;
   left: 0;
   position: fixed;
-  background-size: 100% 100%;
+  background-size: cover center;
+  background-position: center;
   background-image: url("../../assets/images/loader-background.jpeg");
   z-index: 100;
   text-align: center;
