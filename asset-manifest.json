@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/battleground/static/css/main.8861dd36.css",
-    "main.js": "/battleground/static/js/main.ba811f97.js",
+    "main.css": "/battleground/static/css/main.6bfcce60.css",
+    "main.js": "/battleground/static/js/main.6c549d5b.js",
     "static/js/787.87a49b62.chunk.js": "/battleground/static/js/787.87a49b62.chunk.js",
     "static/media/loader.gif": "/battleground/static/media/loader.16797ba9e331edb17acf.gif",
     "static/media/background_bottom_2.png": "/battleground/static/media/background_bottom_2.9d157e8850ff6be0eb78.png",
     "static/media/Belwe-Bold.woff": "/battleground/static/media/Belwe-Bold.375b8bbe5070785a402d.woff",
     "static/media/background.jpg": "/battleground/static/media/background.3d1302b3a3192706f612.jpg",
     "index.html": "/battleground/index.html",
-    "main.8861dd36.css.map": "/battleground/static/css/main.8861dd36.css.map",
-    "main.ba811f97.js.map": "/battleground/static/js/main.ba811f97.js.map",
+    "main.6bfcce60.css.map": "/battleground/static/css/main.6bfcce60.css.map",
+    "main.6c549d5b.js.map": "/battleground/static/js/main.6c549d5b.js.map",
     "787.87a49b62.chunk.js.map": "/battleground/static/js/787.87a49b62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8861dd36.css",
-    "static/js/main.ba811f97.js"
+    "static/css/main.6bfcce60.css",
+    "static/js/main.6c549d5b.js"
   ]
 }
