@@ -10,10 +10,7 @@ import CardDetailPopup from './Components/CardDetailPopup/CardDetailPopup';
 import Loader from './Components/Loader/Loader';
 
 
-
 function App() {
-
-
   const initializePopup = {
     visibility: "none",
     details: null
@@ -23,7 +20,7 @@ function App() {
   const [loader, setLoader] = useState("block");
 
   useEffect(() => {
-    setTimeout(() => setLoader("none"), 1000);
+    setTimeout(() => setLoader("none"), 3000);
   }, []);
 
 

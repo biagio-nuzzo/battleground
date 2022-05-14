@@ -56,7 +56,6 @@ const CardTilt = (props) => {
                       transform: "rotateY(180deg)",
                       marginLeft: "3px",
                     }}
-                  
                   />
                 </div>
               </div>
