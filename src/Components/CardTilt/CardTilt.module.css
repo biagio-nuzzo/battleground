@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
 
+.spacer{
+  height: 20px;
+}
+
 .cardGridContainer {
   margin-left: 10px !important;
   margin-right: 10px !important;
@@ -22,45 +26,36 @@
 
 .settingBarStyle:before {
   content: "";
+  transition: all 2s;
   position: absolute;
-  top: 0;
-  background-size: 134px 73px;
-  background-position: top;
-  background-repeat: repeat-x;
-  left: -3px;
-  width: 134px;
-  height: 73px;
-  z-index: 0;
-  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_left-4ba7c0885d48f7571e2220d7796d83de1ad1e99db229b0b48b5cd337bae85193adc094fa74208aa5005382ac1100cce651cbfbb0a99e94d566a88e0868dff9ab.png");
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_top_tile-2fc1e6f76b820b6c4134c00256a3c6210296b44f0e704fc3df57489c18a1ce91bb35b7ecd693c8d4b5c497c751f32e530105028ba52a88a7f13f8879ec342294.png")
+    center top repeat-x;
 }
 
 .settingBarStyle {
-  height: 73px;
-  border-radius: 6px;
-  padding-top: 8px;
-  padding-bottom: 13px;
-  background-size: 100% 73px;
-  background-position: top;
-  background-repeat: repeat-x;
-  display: block;
+  --bs-gutter-x: 0 !important;
   width: 100%;
-  z-index: 5;
-  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_middle_repeat-b357e74839b5f16173c2f35d36ce22cae24d5b552e2eb1dd1fd7d3091eeccca8eb8ab5c0a2c42e9476357ac2c744e8e22ddc08c5d27be8c670fb9630065a9c01.png");
+  top: 0;
+  transition: all 2s;
+  align-items: center;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_middle_tile-907853600f2b8dc11ae3acca94ff309f58b4959f380a6995e1b69b2d94f4bae5811b3ec588d56290599d59ddf6d00f0ce3fa9087c08ee8f7eabe843ed3646f9d.jpg");
+  padding: 11px 0px 0px;
+  position: relative;
+  height: 92px;
+  z-index: 3;
 }
 
 .settingBarStyle:after {
   content: "";
-  transform: rotate(180deg);
   position: absolute;
-  top: 0;
-  background-size: 134px 73px;
-  background-position: top;
-  background-repeat: repeat-x;
-  right: 0px;
-  width: 134px;
-  height: 73px;
-  z-index: 0;
-  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/wood_left-4ba7c0885d48f7571e2220d7796d83de1ad1e99db229b0b48b5cd337bae85193adc094fa74208aa5005382ac1100cce651cbfbb0a99e94d566a88e0868dff9ab.png");
+  bottom: -15px;
+  height: 60px;
+  width: 100%;
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_bottom_tile-fe6e278438831fdcb9e897c1d90882eadf1c9c9edb05f9e729b8678c3da8ce386e4a5a03200d943c64837e7d113a8345b8424d05b7906570dde191e3eab8b4dd.png")
+    center top repeat-x;
 }
 
 .inputStyle {
@@ -204,6 +199,12 @@
   inset: -10px;
   opacity: 0;
   transition: opacity 0.15s ease 0s;
+}
+
+.startButtonSelected {
+  background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/battlegrounds/icon_gold_selected-db81d4250b855e8f57996a35bdc48bee978a8bc880d8af02b804481a80094497a5376eb61833b94d427cb26194c2528520c052044527be424a61aa6e4bc1bb81.png")
+    center center / contain no-repeat !important;
+  background-size: 43px !important;
 }
 
 .starButton:hover::before {
