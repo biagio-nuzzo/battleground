@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/battleground/static/css/main.215103af.css",
+    "main.css": "/battleground/static/css/main.ff3c5956.css",
     "main.js": "/battleground/static/js/main.f76769f7.js",
     "static/js/787.87a49b62.chunk.js": "/battleground/static/js/787.87a49b62.chunk.js",
     "static/media/loader.gif": "/battleground/static/media/loader.16797ba9e331edb17acf.gif",
@@ -11,12 +11,12 @@
     "static/media/Belwe-Bold.woff": "/battleground/static/media/Belwe-Bold.375b8bbe5070785a402d.woff",
     "static/media/background.jpg": "/battleground/static/media/background.3d1302b3a3192706f612.jpg",
     "index.html": "/battleground/index.html",
-    "main.215103af.css.map": "/battleground/static/css/main.215103af.css.map",
+    "main.ff3c5956.css.map": "/battleground/static/css/main.ff3c5956.css.map",
     "main.f76769f7.js.map": "/battleground/static/js/main.f76769f7.js.map",
     "787.87a49b62.chunk.js.map": "/battleground/static/js/787.87a49b62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.215103af.css",
+    "static/css/main.ff3c5956.css",
     "static/js/main.f76769f7.js"
   ]
 }
