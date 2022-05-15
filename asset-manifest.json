@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/battleground/static/css/main.41cb0c18.css",
-    "main.js": "/battleground/static/js/main.f76769f7.js",
+    "main.css": "/battleground/static/css/main.f95bc9f1.css",
+    "main.js": "/battleground/static/js/main.331e2fec.js",
     "static/js/787.87a49b62.chunk.js": "/battleground/static/js/787.87a49b62.chunk.js",
     "static/media/loader.gif": "/battleground/static/media/loader.16797ba9e331edb17acf.gif",
     "static/media/hero-section-image.jpeg": "/battleground/static/media/hero-section-image.462cd11548906b6e4793.jpeg",
@@ -11,12 +11,12 @@
     "static/media/Belwe-Bold.woff": "/battleground/static/media/Belwe-Bold.375b8bbe5070785a402d.woff",
     "static/media/background.jpg": "/battleground/static/media/background.3d1302b3a3192706f612.jpg",
     "index.html": "/battleground/index.html",
-    "main.41cb0c18.css.map": "/battleground/static/css/main.41cb0c18.css.map",
-    "main.f76769f7.js.map": "/battleground/static/js/main.f76769f7.js.map",
+    "main.f95bc9f1.css.map": "/battleground/static/css/main.f95bc9f1.css.map",
+    "main.331e2fec.js.map": "/battleground/static/js/main.331e2fec.js.map",
     "787.87a49b62.chunk.js.map": "/battleground/static/js/787.87a49b62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41cb0c18.css",
-    "static/js/main.f76769f7.js"
+    "static/css/main.f95bc9f1.css",
+    "static/js/main.331e2fec.js"
   ]
 }
