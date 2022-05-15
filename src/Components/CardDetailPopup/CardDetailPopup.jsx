@@ -103,10 +103,10 @@ const CardDetailPopup = (props) => {
                       onMouseLeave={() => {
                         setTripleVisibility("none");
                       }}
-                      onClick={() =>{
-                        if(tripleVisibility === "none"){
+                      onClick={() => {
+                        if (tripleVisibility === "none") {
                           setTripleVisibility("block");
-                        }else{
+                        } else {
                           setTripleVisibility("none");
                         }
                       }}

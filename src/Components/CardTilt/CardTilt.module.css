@@ -73,7 +73,6 @@
   font-weight: 500;
   font-size: 18px;
   font-family: HearthStoneFont;
-  letter-spacing: 0.75px;
   color: #d6ab1d;
   caret-color: #d6ab1d;
 }
@@ -191,7 +190,7 @@
   transition: background-image 0.15s ease 0s;
 }
 
-.divInternalThreeSearchBar{
+.divInternalThreeSearchBar {
   width: 100% !important;
   margin: 0px -10px;
   display: flex;
@@ -257,6 +256,56 @@
   font-family: HearthStoneFont;
 }
 
+.checkBoxFilterContainer {
+  align-items: center;
+  display: flex;
+  position: relative;
+  z-index: 999;
+}
+
+.checkBoxFilter {
+  display: flex;
+  align-items: center;
+}
+
+.checkBoxTitle {
+  margin-right: 8px;
+  font-size: 18px;
+  color: white;
+  font-family: HearthStoneFont;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.95885px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.14147px 1.99499px 0px,
+    rgb(0 0 0) -0.83229px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.70157px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.42159px -1.95506px 0px,
+    rgb(0 0 0) 0.56732px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.55883px 0px;
+}
+
+.customCheckBox {
+  z-index: 9999;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background-color: #3d0d0d;
+  display: flex;
+  border: 3px solid #c5aa54;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px;
+  transition: all 0.2s;
+}
+
+.customCheckBox:hover {
+  border-radius: 4px;
+  background-color: #8b2020;
+  border: 3px solid #f5ef9e;
+}
+
+.customCheckBox:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px;
+}
+
 @media screen and (max-width: 768px) {
   .filtersContainer {
     display: none;
@@ -269,8 +318,57 @@
     width: 100%;
   }
 
-  .divInternalOne{
+  .divInternalOne {
     margin-left: 5px;
     margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .searchBarController {
+    width: 250px;
+  }
+
+  .filtersContainer {
+    margin-left: 30px;
+  }
+  .checkBoxFilterContainer {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .searchBarController {
+    width: 250px;
+  }
+
+  .filtersContainer {
+    margin-left: 30px;
+  }
+  .checkBoxFilterContainer {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .searchBarContainer {
+    width: 100%;
+  }
+  .searchBarController {
+    width: 100%;
+  }
+
+  .filtersContainer {
+    display: none;
+  }
+  .checkBoxFilterContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .searchBarContainer {
+    width: 70%;
+    margin-left: 30px !important;
   }
 }

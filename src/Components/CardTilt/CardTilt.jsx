@@ -4,7 +4,7 @@ import VanillaTilt from "vanilla-tilt";
 import { Col, Row, Container } from "react-bootstrap";
 import Divider from "../Divider/Divider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const options = {
   scale: 1.15,
@@ -42,6 +42,11 @@ const CardTilt = (props) => {
   const [scrollFromTop, setscrollFromTop] = useState(false);
   const [fixedBar, setFixedBar] = useState(false);
 
+  const [heroesCheckbox, setHeroesCheckbox] = useState(true);
+  const [cardsCheckbox, setCardsCheckbox] = useState(true);
+  const [powersCheckbox, setPowersCheckbox] = useState(true);
+  const [secretsCheckbox, setSecretsCheckbox] = useState(true);
+
   const changeTransform = () => {
     setscrollFromTop(window.scrollY);
 
@@ -64,8 +69,15 @@ const CardTilt = (props) => {
         style={{ position: fixedBar === true ? "fixed" : "relative" }}
       >
         <Container>
-          <Row className="mx-3">
-            <Col className={Style.searchBarContainer} md={6} sm={12} xs={12}>
+          <Row className="">
+            <Col
+              xl={3}
+              lg={3}
+              md={3}
+              sm={10}
+              xs={10}
+              className={Style.searchBarContainer}
+            >
               <div className={Style.searchBarController}>
                 <div className={Style.divInternalOne}>
                   <div className={Style.divInternalTwo}>
@@ -73,7 +85,7 @@ const CardTilt = (props) => {
                       <input
                         type="text"
                         className={Style.inputStyle}
-                        placeholder="Cerca Eroi, Carte e Poteri..."
+                        placeholder="Cerca qui..."
                         onChange={(event) => {
                           tmpHeroesArray = [];
                           setSearchTerm(event.target.value);
@@ -88,7 +100,7 @@ const CardTilt = (props) => {
                           transform: "rotateY(180deg)",
                           marginLeft: "3px",
                           position: "absolute",
-                          right: 0
+                          right: 0,
                         }}
                       />
                     </div>
@@ -96,7 +108,7 @@ const CardTilt = (props) => {
                 </div>
               </div>
             </Col>
-            <Col md={6} sm={6} className={Style.filtersContainer}>
+            <Col xl={3} lg={3} md={3} sm={0} className={Style.filtersContainer}>
               <div style={{ width: "224px" }}>
                 <div className={Style.divInternalOne}>
                   <div className={Style.divInternalTwo}>
@@ -244,288 +256,425 @@ const CardTilt = (props) => {
                 </div>
               </div>
             </Col>
+            <Col
+              xl={5}
+              lg={5}
+              md={5}
+              sm={0}
+              className={Style.checkBoxFilterContainer}
+            >
+              <div className={Style.checkBoxFilter}>
+                <span className={Style.checkBoxTitle}>Carte</span>
+                <span
+                  onClick={() => {
+                    if (cardsCheckbox) {
+                      setCardsCheckbox(false);
+                    } else {
+                      setCardsCheckbox(true);
+                    }
+                  }}
+                  className={Style.customCheckBox}
+                >
+                  {cardsCheckbox && (
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      style={{
+                        color: "gold",
+                        fontSize: 20,
+                        fontWeight: 200,
+                        margin: "auto",
+                        right: 0,
+                      }}
+                    />
+                  )}
+                </span>
+              </div>
+              <div
+                className={Style.checkBoxFilter}
+                style={{ marginLeft: "10px" }}
+              >
+                <span className={Style.checkBoxTitle}>Eroi</span>
+                <span
+                  onClick={() => {
+                    if (heroesCheckbox) {
+                      setHeroesCheckbox(false);
+                    } else {
+                      setHeroesCheckbox(true);
+                    }
+                  }}
+                  className={Style.customCheckBox}
+                >
+                  {heroesCheckbox && (
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      style={{
+                        color: "gold",
+                        fontSize: 20,
+                        fontWeight: 200,
+                        margin: "auto",
+                        right: 0,
+                      }}
+                    />
+                  )}
+                </span>
+              </div>
+              <div
+                className={Style.checkBoxFilter}
+                style={{ marginLeft: "10px" }}
+              >
+                <span className={Style.checkBoxTitle}>Poteri</span>
+                <span
+                  onClick={() => {
+                    if (powersCheckbox) {
+                      setPowersCheckbox(false);
+                    } else {
+                      setPowersCheckbox(true);
+                    }
+                  }}
+                  className={Style.customCheckBox}
+                >
+                  {powersCheckbox && (
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      style={{
+                        color: "gold",
+                        fontSize: 20,
+                        fontWeight: 200,
+                        margin: "auto",
+                        right: 0,
+                      }}
+                    />
+                  )}
+                </span>
+              </div>
+              <div
+                className={Style.checkBoxFilter}
+                style={{ marginLeft: "10px" }}
+              >
+                <span className={Style.checkBoxTitle}>Segreti</span>
+                <span
+                  onClick={() => {
+                    if (secretsCheckbox) {
+                      setSecretsCheckbox(false);
+                    } else {
+                      setSecretsCheckbox(true);
+                    }
+                  }}
+                  className={Style.customCheckBox}
+                >
+                  {secretsCheckbox && (
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      style={{
+                        color: "gold",
+                        fontSize: 20,
+                        fontWeight: 200,
+                        margin: "auto",
+                        right: 0,
+                      }}
+                    />
+                  )}
+                </span>
+              </div>
+            </Col>
           </Row>
         </Container>
       </div>
 
       <div style={{ height: fixedBar === true ? "112px" : "20px" }}></div>
+
       <Container>
         {/* Cards */}
-        <Row className={Style.cardGridContainer}>
-          <Divider title={"Carte"} />
-          {props.cards.cards
-            .filter((val) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-              return null;
-            })
-            .filter((val) => {
-              if (stars.length === 0) {
-                tmpCardsArray.push(val);
-                return val;
-              } else if (stars.includes(val.battlegrounds.tier)) {
-                tmpCardsArray.push(val);
-                return val;
-              }
-              return null;
-            })
-            .map((card, index) => {
-              return (
-                <Col key={index} lg={2} md={4} sm={6} xs={12}>
-                  <Tilt
-                    onClick={() => {
-                      const tmp_data = {
-                        visibility: "flex",
-                        details: card,
-                      };
-                      props.cardDetail(tmp_data);
-                    }}
-                    options={options}
-                    className={Style.cardContainer}
-                    style={{
-                      backgroundColor: "transparent",
-                      width: "100%",
-                      boxShadow: "none",
-                      margin: 0,
-                    }}
-                  >
-                    <img
-                      alt="img-hs"
-                      className={Style.imgCardTilt}
-                      src={
-                        card.battlegrounds.image
-                          ? card.battlegrounds.image
-                          : card.image
-                      }
-                    />
-                  </Tilt>
+        {cardsCheckbox && (
+          <Row className={Style.cardGridContainer}>
+            <Divider title={"Carte"} />
+            {props.cards.cards
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+                return null;
+              })
+              .filter((val) => {
+                if (stars.length === 0) {
+                  tmpCardsArray.push(val);
+                  return val;
+                } else if (stars.includes(val.battlegrounds.tier)) {
+                  tmpCardsArray.push(val);
+                  return val;
+                }
+                return null;
+              })
+              .map((card, index) => {
+                return (
+                  <Col key={index} lg={2} md={4} sm={6} xs={12}>
+                    <Tilt
+                      onClick={() => {
+                        const tmp_data = {
+                          visibility: "flex",
+                          details: card,
+                        };
+                        props.cardDetail(tmp_data);
+                      }}
+                      options={options}
+                      className={Style.cardContainer}
+                      style={{
+                        backgroundColor: "transparent",
+                        width: "100%",
+                        boxShadow: "none",
+                        margin: 0,
+                      }}
+                    >
+                      <img
+                        alt="img-hs"
+                        className={Style.imgCardTilt}
+                        src={
+                          card.battlegrounds.image
+                            ? card.battlegrounds.image
+                            : card.image
+                        }
+                      />
+                    </Tilt>
+                  </Col>
+                );
+              })}
+            {tmpCardsArray.length === 0 && (
+              <Row className={Style.noResultContainer}>
+                <Col xs={12}>
+                  <div className={Style.dividerNoResultImage}></div>
+                  <div className={Style.dividerNoResult}></div>
+                  <div className={Style.dividerNoResultMessage}>
+                    <h5 style={{ fontSize: "22px" }}>Nessuna Carta trovata</h5>
+                    <p>
+                      Prova a rimuovere dei filtri per ottenere risultati
+                      migliori
+                    </p>
+                  </div>
                 </Col>
-              );
-            })}
-          {tmpCardsArray.length === 0 && (
-            <Row className={Style.noResultContainer}>
-              <Col xs={12}>
-                <div className={Style.dividerNoResultImage}></div>
-                <div className={Style.dividerNoResult}></div>
-                <div className={Style.dividerNoResultMessage}>
-                  <h5 style={{ fontSize: "22px" }}>Nessuna Carta trovata</h5>
-                  <p>
-                    Prova a rimuovere dei filtri per ottenere risultati migliori
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          )}
-        </Row>
+              </Row>
+            )}
+          </Row>
+        )}
+
         {/* Heroes */}
-        <Row className={Style.cardGridContainer}>
-          <Divider title={"Eroi"} />
-          {props.heroes.heroes
-            .filter((val) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-              return null;
-            })
-            .filter((val) => {
-              if (stars.length === 0) {
-                tmpHeroesArray.push(val);
-                return val;
-              } else if (stars.includes(val.battlegrounds.tier)) {
-                tmpHeroesArray.push(val);
-                return val;
-              }
-              return null;
-            })
-            .map((heroe, index) => {
-              return (
-                <Col key={index} lg={2} md={3} sm={6} xs={12}>
-                  <Tilt
-                    onClick={() => {
-                      const tmp_data = {
-                        visibility: "flex",
-                        details: heroe,
-                      };
-                      props.cardDetail(tmp_data);
-                    }}
-                    options={options}
-                    className={Style.cardContainer}
-                    style={{
-                      backgroundColor: "transparent",
-                      width: "100%",
-                      boxShadow: "none",
-                      margin: 0,
-                    }}
-                  >
-                    <img
-                      alt="img-hs"
-                      className={Style.imgCardTilt}
-                      src={heroe.image}
-                    />
-                  </Tilt>
+        {heroesCheckbox && (
+          <Row className={Style.cardGridContainer}>
+            <Divider title={"Eroi"} />
+            {props.heroes.heroes
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+                return null;
+              })
+              .filter((val) => {
+                if (stars.length === 0) {
+                  tmpHeroesArray.push(val);
+                  return val;
+                } else if (stars.includes(val.battlegrounds.tier)) {
+                  tmpHeroesArray.push(val);
+                  return val;
+                }
+                return null;
+              })
+              .map((heroe, index) => {
+                return (
+                  <Col key={index} lg={2} md={3} sm={6} xs={12}>
+                    <Tilt
+                      onClick={() => {
+                        const tmp_data = {
+                          visibility: "flex",
+                          details: heroe,
+                        };
+                        props.cardDetail(tmp_data);
+                      }}
+                      options={options}
+                      className={Style.cardContainer}
+                      style={{
+                        backgroundColor: "transparent",
+                        width: "100%",
+                        boxShadow: "none",
+                        margin: 0,
+                      }}
+                    >
+                      <img
+                        alt="img-hs"
+                        className={Style.imgCardTilt}
+                        src={heroe.image}
+                      />
+                    </Tilt>
+                  </Col>
+                );
+              })}
+            {tmpHeroesArray.length === 0 && (
+              <Row className={Style.noResultContainer}>
+                <Col xs={12}>
+                  <div className={Style.dividerNoResultImage}></div>
+                  <div className={Style.dividerNoResult}></div>
+                  <div className={Style.dividerNoResultMessage}>
+                    <h5 style={{ fontSize: "22px" }}>Nessuna Eroe trovato</h5>
+                    <p>
+                      Prova a rimuovere dei filtri per ottenere risultati
+                      migliori
+                    </p>
+                  </div>
                 </Col>
-              );
-            })}
-          {tmpHeroesArray.length === 0 && (
-            <Row className={Style.noResultContainer}>
-              <Col xs={12}>
-                <div className={Style.dividerNoResultImage}></div>
-                <div className={Style.dividerNoResult}></div>
-                <div className={Style.dividerNoResultMessage}>
-                  <h5 style={{ fontSize: "22px" }}>Nessuna Eroe trovato</h5>
-                  <p>
-                    Prova a rimuovere dei filtri per ottenere risultati migliori
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          )}
-        </Row>
+              </Row>
+            )}
+          </Row>
+        )}
+
         {/* Powers */}
-        <Row className={Style.cardGridContainer}>
-          <Divider title={"Poteri"} />
-          {props.powers.powers
-            .filter((val) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-              return null;
-            })
-            .filter((val) => {
-              if (stars.length === 0) {
-                tmpPowersArray.push(val);
-                return val;
-              } else if (stars.includes(val.battlegrounds.tier)) {
-                tmpPowersArray.push(val);
-                return val;
-              }
-              return null;
-            })
-            .map((power, index) => {
-              return (
-                <Col key={index} lg={2} md={4} sm={6} xs={12}>
-                  <Tilt
-                    onClick={() => {
-                      const tmp_data = {
-                        visibility: "flex",
-                        details: power,
-                      };
-                      props.cardDetail(tmp_data);
-                    }}
-                    options={options}
-                    className={Style.cardContainer}
-                    style={{
-                      backgroundColor: "transparent",
-                      width: "100%",
-                      boxShadow: "none",
-                      margin: 0,
-                    }}
-                  >
-                    <img
-                      alt="img-hs"
-                      className={Style.imgCardTilt}
-                      src={power.image}
-                    />
-                  </Tilt>
+        {powersCheckbox && (
+          <Row className={Style.cardGridContainer}>
+            <Divider title={"Poteri"} />
+            {props.powers.powers
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+                return null;
+              })
+              .filter((val) => {
+                if (stars.length === 0) {
+                  tmpPowersArray.push(val);
+                  return val;
+                } else if (stars.includes(val.battlegrounds.tier)) {
+                  tmpPowersArray.push(val);
+                  return val;
+                }
+                return null;
+              })
+              .map((power, index) => {
+                return (
+                  <Col key={index} lg={2} md={4} sm={6} xs={12}>
+                    <Tilt
+                      onClick={() => {
+                        const tmp_data = {
+                          visibility: "flex",
+                          details: power,
+                        };
+                        props.cardDetail(tmp_data);
+                      }}
+                      options={options}
+                      className={Style.cardContainer}
+                      style={{
+                        backgroundColor: "transparent",
+                        width: "100%",
+                        boxShadow: "none",
+                        margin: 0,
+                      }}
+                    >
+                      <img
+                        alt="img-hs"
+                        className={Style.imgCardTilt}
+                        src={power.image}
+                      />
+                    </Tilt>
+                  </Col>
+                );
+              })}
+            {tmpPowersArray.length === 0 && (
+              <Row className={Style.noResultContainer}>
+                <Col xs={12}>
+                  <div className={Style.dividerNoResultImage}></div>
+                  <div className={Style.dividerNoResult}></div>
+                  <div className={Style.dividerNoResultMessage}>
+                    <h5 style={{ fontSize: "22px" }}>Nessun Potere trovato</h5>
+                    <p>
+                      Prova a rimuovere dei filtri per ottenere risultati
+                      migliori
+                    </p>
+                  </div>
                 </Col>
-              );
-            })}
-          {tmpPowersArray.length === 0 && (
-            <Row className={Style.noResultContainer}>
-              <Col xs={12}>
-                <div className={Style.dividerNoResultImage}></div>
-                <div className={Style.dividerNoResult}></div>
-                <div className={Style.dividerNoResultMessage}>
-                  <h5 style={{ fontSize: "22px" }}>Nessun Potere trovato</h5>
-                  <p>
-                    Prova a rimuovere dei filtri per ottenere risultati migliori
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          )}
-        </Row>
+              </Row>
+            )}
+          </Row>
+        )}
+
         {/* Secrets */}
-        <Row className={Style.cardGridContainer}>
-          <Divider title={"Segreti"} />
-          {props.secrets.secrets
-            .filter((val) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-              return null;
-            })
-            .filter((val) => {
-              if (stars.length === 0) {
-                tmpSecretsArray.push(val);
-                return val;
-              } else if (stars.includes(val.battlegrounds.tier)) {
-                tmpSecretsArray.push(val);
-                return val;
-              }
-              return null;
-            })
-            .map((secret, index) => {
-              return (
-                <Col key={index} lg={2} md={4} sm={6} xs={12}>
-                  <Tilt
-                    onClick={() => {
-                      const tmp_data = {
-                        visibility: "flex",
-                        details: secret,
-                      };
-                      props.cardDetail(tmp_data);
-                    }}
-                    options={options}
-                    className={Style.cardContainer}
-                    style={{
-                      backgroundColor: "transparent",
-                      width: "100%",
-                      boxShadow: "none",
-                      margin: 0,
-                    }}
-                  >
-                    <img
-                      alt="img-hs"
-                      className={Style.imgCardTilt}
-                      src={secret.image}
-                    />
-                  </Tilt>
+        {secretsCheckbox && (
+          <Row className={Style.cardGridContainer}>
+            <Divider title={"Segreti"} />
+            {props.secrets.secrets
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+                return null;
+              })
+              .filter((val) => {
+                if (stars.length === 0) {
+                  tmpSecretsArray.push(val);
+                  return val;
+                } else if (stars.includes(val.battlegrounds.tier)) {
+                  tmpSecretsArray.push(val);
+                  return val;
+                }
+                return null;
+              })
+              .map((secret, index) => {
+                return (
+                  <Col key={index} lg={2} md={4} sm={6} xs={12}>
+                    <Tilt
+                      onClick={() => {
+                        const tmp_data = {
+                          visibility: "flex",
+                          details: secret,
+                        };
+                        props.cardDetail(tmp_data);
+                      }}
+                      options={options}
+                      className={Style.cardContainer}
+                      style={{
+                        backgroundColor: "transparent",
+                        width: "100%",
+                        boxShadow: "none",
+                        margin: 0,
+                      }}
+                    >
+                      <img
+                        alt="img-hs"
+                        className={Style.imgCardTilt}
+                        src={secret.image}
+                      />
+                    </Tilt>
+                  </Col>
+                );
+              })}
+            {tmpSecretsArray.length === 0 && (
+              <Row className={Style.noResultContainer}>
+                <Col xs={12} className="mx-5">
+                  <div className={Style.dividerNoResultImage}></div>
+                  <div className={Style.dividerNoResult}></div>
+                  <div className={Style.dividerNoResultMessage}>
+                    <h5 style={{ fontSize: "22px" }}>Nessun Segreto trovato</h5>
+                    <p>
+                      Prova a rimuovere dei filtri per ottenere risultati
+                      migliori
+                    </p>
+                  </div>
                 </Col>
-              );
-            })}
-          {tmpSecretsArray.length === 0 && (
-            <Row className={Style.noResultContainer}>
-              <Col xs={12} className="mx-5">
-                <div className={Style.dividerNoResultImage}></div>
-                <div className={Style.dividerNoResult}></div>
-                <div className={Style.dividerNoResultMessage}>
-                  <h5 style={{ fontSize: "22px" }}>Nessun Segreto trovato</h5>
-                  <p>
-                    Prova a rimuovere dei filtri per ottenere risultati migliori
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          )}
-        </Row>
+              </Row>
+            )}
+          </Row>
+        )}
       </Container>
     </React.Fragment>
   );
