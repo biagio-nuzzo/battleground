@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
 
-.spacer{
+.spacer {
   height: 20px;
 }
 
@@ -44,6 +44,8 @@
   background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_middle_tile-907853600f2b8dc11ae3acca94ff309f58b4959f380a6995e1b69b2d94f4bae5811b3ec588d56290599d59ddf6d00f0ce3fa9087c08ee8f7eabe843ed3646f9d.jpg");
   padding: 11px 0px 0px;
   position: relative;
+  align-items: center;
+  display: flex;
   height: 92px;
   z-index: 3;
 }
@@ -58,10 +60,14 @@
     center top repeat-x;
 }
 
+.searchBarController {
+  width: 323px;
+}
+
 .inputStyle {
   padding-left: 5px;
   background-color: transparent;
-  width: 280px;
+  width: 95%;
   z-index: 999;
   border: none;
   font-weight: 500;
@@ -105,8 +111,9 @@
 .dividerNoResult {
   width: 100%;
   height: 34px;
+  background-size: 100% !important;
   background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/ui/divider-double-detailed-93ef45548a2f3d93bb7d53152ec7b98a71cba0c1a885f653bf42de28022ba3faf4e2978bb21c6f9b9286414070d4c486ec49f5b0304bd6247d4074f7984d6955.png")
-    center center no-repeat;
+    center no-repeat;
 }
 
 .dividerNoResultMessage {
@@ -184,6 +191,14 @@
   transition: background-image 0.15s ease 0s;
 }
 
+.divInternalThreeSearchBar{
+  width: 100% !important;
+  margin: 0px -10px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
 .divInternalThree {
   margin: 0px -10px;
   display: flex;
@@ -240,4 +255,22 @@
   position: relative;
   white-space: nowrap;
   font-family: HearthStoneFont;
+}
+
+@media screen and (max-width: 768px) {
+  .filtersContainer {
+    display: none;
+  }
+
+  .divInternalThree {
+    width: 100%;
+  }
+  .searchBarController {
+    width: 100%;
+  }
+
+  .divInternalOne{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

@@ -1,0 +1,212 @@
+.footerMainContainer {
+  position: relative;
+  width: 100%;
+  height: 157px;
+  left: 0px;
+  z-index: 3;
+  margin-bottom: -14px;
+  filter: drop-shadow(rgba(0, 0, 0, 0.7) 0px 0px 8px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.footerClass {
+  width: 100%;
+  min-width: 300px;
+  top: 0px;
+  left: 0px;
+  height: 157px;
+  position: absolute;
+  background: url("https://d2vkoy1na2a6o6.cloudfront.net/images/bg_wood_tile.aff07b7098441e60ef43293207da2c2b.jpg")
+    rgb(83, 58, 35);
+}
+
+.leftFooter {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  width: 32%;
+  height: 157px;
+  transition: all 2s;
+}
+
+.rightFooter {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 32%;
+    height: 157px;
+    transition: all 2s;
+  }
+
+.leftFooterBackgroundStart {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 116px;
+  background: url("https://d2vkoy1na2a6o6.cloudfront.net/images/pattern_social_left_left.34ac33b330c1e36ab1d47bf384cba8e5.png")
+    center center no-repeat;
+}
+
+.leftFooterBackgroundCenter {
+  position: relative;
+  top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 116px;
+  background: url("https://d2vkoy1na2a6o6.cloudfront.net/images/pattern_social_right_mid.cad49b4c31343c18159861e3089b76d0.png")
+    center center;
+}
+
+.leftFooterBackgroundEnd {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  width: 40px;
+  height: 116px;
+  background: url("https://d2vkoy1na2a6o6.cloudfront.net/images/pattern_social_left_right.b7023269e6f3a003328c35d01bde64a1.png")
+    center center no-repeat;
+}
+
+.centerFooterButtons {
+  position: relative;
+  margin-left: 0px;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.centerFooterTitle {
+  font-size: 20px;
+  color: rgb(195, 166, 129);
+  margin: 0px 0px 10px;
+  font-family: HearthStoneFont;
+}
+
+.footerRowButtons {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.footerButtons {
+  position: relative;
+  top: 0px;
+  width: 60px;
+  height: 60px;
+  margin: 0px 5px;
+  background: url("https://d2vkoy1na2a6o6.cloudfront.net/images/icon_social_bg.bf36ad9b575df1ad3173b5d84857af4a.png")
+    0px 0px / cover no-repeat;
+}
+
+.facebookFooterIcon {
+  background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/icon_social_facebook.0d132f1e9c827637ab134f6f56533935.png");
+  display: block;
+  background-repeat: no-repeat;
+  max-width: 68px;
+  max-height: 68px;
+  background-size: 80%;
+  background-position: center center;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  inset: 0px;
+  opacity: 0.8;
+}
+
+.twitterFooterIcon {
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/icon_social_twitter.fd5a96bd50a9ee72d4214db0de94dd18.png");
+    display: block;
+    background-repeat: no-repeat;
+    max-width: 68px;
+    max-height: 68px;
+    background-size: 80%;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    inset: 0px;
+    opacity: 0.8;
+  }
+
+  .youtubeFooterIcon {
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/icon_social_youtube.c48289474998dcd5e3e2092d000297a2.png");
+    display: block;
+    background-repeat: no-repeat;
+    max-width: 68px;
+    max-height: 68px;
+    background-size: 80%;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    inset: 0px;
+    opacity: 0.8;
+  }
+
+  .instagramFooterIcon {
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/icon_social_instagram.3c7cffdd3ab369500a1d8cfa4dd77db2.png");
+    display: block;
+    background-repeat: no-repeat;
+    max-width: 68px;
+    max-height: 68px;
+    background-size: 80%;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    inset: 0px;
+    opacity: 0.8;
+  }
+
+.facebookFooterIcon:hover{
+    opacity: 1;
+}
+
+.twitterFooterIcon:hover{
+    opacity: 1;
+}
+
+.youtubeFooterIcon:hover{
+    opacity: 1;
+}
+
+.instagramFooterIcon:hover{
+    opacity: 1;
+}
+
+@media screen and (max-width: 750px) {
+  .leftFooter, .rightFooter {
+    width: 160px;
+  }
+}
+
+
+@media screen and (max-width: 635px) {
+    .leftFooter, .rightFooter {
+      width: 70px;
+    }
+  }
+  
+
+  @media screen and (max-width: 535px) {
+    .leftFooter, .rightFooter {
+      width: 50px;
+    }
+  }
+  

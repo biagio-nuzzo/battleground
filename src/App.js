@@ -8,6 +8,7 @@ import cards from "./datas/cards.js";
 import CardDetailPopup from './Components/CardDetailPopup/CardDetailPopup';
 import Loader from './Components/Loader/Loader';
 import HeroSection from './Components/HeroSection/HeroSection';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const initializePopup = {
@@ -38,6 +39,8 @@ function App() {
           <CardTilt cardDetail={setCardDetail} secrets={secrets} heroes={heroes} powers={powers} cards={cards} />
         </div>
       </div>
+
+      <Footer />
     </React.Fragment>
 
   );

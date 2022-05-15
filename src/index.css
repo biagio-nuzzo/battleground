@@ -5,6 +5,7 @@
 }
 
 body {
+  background-image: linear-gradient(#432d51, #120c0c);
   margin: 0;
   font-family: 'Asul', sans-serif;
   -webkit-font-smoothing: antialiased;

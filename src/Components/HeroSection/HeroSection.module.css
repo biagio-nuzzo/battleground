@@ -1,6 +1,24 @@
-.HeroSectionContainer{
-    height: 500px;
-    background-size: cover center;
-    background-position: center;
-    background-image: url("../../assets/images/loader-background.jpeg");
+.heroSectionContainer {
+  height: 500px;
+  background-size: cover center;
+  background-position: center;
+  background-image: url("../../assets/images/loader-background.jpeg");
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (min-width: 1500px) {
+  .heroSectionContainer {
+    background-image: url("../../assets/images/hero-section-image.jpeg");
+  }
+}
+
+.heroTitle{
+    width: 100%;
+    text-align: center;
+}
+
+.heroTitle img{
+    width: 100%;
+    max-width: 800px;
 }
