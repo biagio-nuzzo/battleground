@@ -1,0 +1,77 @@
+name: Deploy test-bg
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_id:
+        description: 'Service ID'
+        required: true
+        default: 'test-bg'
+      backend_duration_minutes:
+        description: 'Durata backend in minuti'
+        required: true
+        default: '120'
+        type: number
+      enable_runner_ssh:
+        description: 'Abilita SSH sul runner'
+        required: false
+        default: 'false'
+        type: boolean
+      runner_ssh_password:
+        description: 'Password SSH runner'
+        required: false
+        default: ''
+        type: string
+      env_vars_json:
+        description: 'Environment variables as JSON'
+        required: false
+        default: '{}'
+        type: string
+
+env:
+  SERVICE_ID: ${{ github.event.inputs.service_id }}
+  APP_PORT: 8080
+
+jobs:
+  deploy-service:
+    name: Deploy test-bg
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Parse environment variables
+        id: parse_env
+        run: |
+          echo '${{ github.event.inputs.env_vars_json }}' > /tmp/env_vars.json
+          cat /tmp/env_vars.json
+          
+          python3 -c "
+          import json, os
+          with open('/tmp/env_vars.json') as f:
+              env_vars = json.load(f)
+          for key, value in env_vars.items():
+              with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+                  env_file.write(f'{key}={value}\n')
+          "
+
+      - name: Deploy to Atlas
+        uses: ./.github/actions/atlas-deploy
+        with:
+          service_id: ${{ env.SERVICE_ID }}
+          peer_prefix: 'runner'
+          backend_duration_minutes: ${{ github.event.inputs.backend_duration_minutes }}
+          app_port: ${{ env.APP_PORT }}
+          protocol: 'http'
+          expose: 'host'
+          enable_runner_ssh: ${{ github.event.inputs.enable_runner_ssh }}
+          runner_ssh_password: ${{ github.event.inputs.runner_ssh_password }}
+          custom_steps_file: '.github/deploy-scripts/test-bg/deploy.sh'
+          gateway_ssh_key: ${{ secrets.ATLAS_GATEWAY_SSH_KEY }}
+          gateway_ip: ${{ secrets.ATLAS_GATEWAY_IP }}
+          gateway_user: ${{ secrets.ATLAS_GATEWAY_USER }}
+          gateway_fqdn: ${{ secrets.ATLAS_GATEWAY_FQDN }}
+          registry_url: ${{ secrets.ATLAS_REGISTRY_URL }}
+          registry_token: ${{ secrets.ATLAS_REGISTRY_TOKEN }}
